@@ -1,0 +1,7 @@
+Foi analisado e identificado que nessa versão do código, o método “search()” está duplicado e será sobrescrito conforme o tipo do objeto instanciado passado como parâmetro, seja guitar ou mandolin. O ideal seria passar um objeto “instrumentSpec” como parâmetro, deixando-o universal e não restrito.
+ 
+Além disso, a classe “InstrumentSpec” está unicamente limitada aos 2 tipos de instrumentos existentes. Se porventura for necessário adicionar outros tipos de instrumentos será necessário readaptar os atributos da classe para suportar.
+
+As classes “Guitar” e “Mandolin” só servem como base para as suas respectivas classes de especificações, que por sua vez herdam de “InstrumentSpec” e, consequentemente, de “Instrument”. Essa hierarquia é considerada desnecessária e confusa.
+
+Sugere-se, portanto, que seria mais eficiente transformar a classe abstrata “Instrument” em uma classe concreta para que de tal forma, possa ser instanciada e evitar subclasses para cada instrumento. Dentro de “InstrumentSpec” poderia ser criado uma coleção, como um Map e abrigar todas as propriedades dos instrumentos, Dessa forma, cada instrumento teria somente suas próprias propriedades, tornando o código mais flexível e de fácil manutenção.
