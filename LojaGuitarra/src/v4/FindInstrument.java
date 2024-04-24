@@ -22,7 +22,7 @@ public class FindInstrument {
             System.out.println("Erin, you might like these guitars: ");
             for (Iterator<Guitar> i = matchingGuitars.iterator(); i.hasNext();) {
                 Guitar guitar = (Guitar)i.next();
-                InstrumentSpec spec = guitar.getSpec();
+                GuitarSpec spec = (GuitarSpec) guitar.getSpec();
                 System.out.println(" We have a " +
                 spec.getBuilder() + " " + spec.getModel() + " " +
                 spec.getType() + " guitar:\n   " +
@@ -40,7 +40,7 @@ public class FindInstrument {
 	    	System.out.println("Phil, you might like these mandolins: ");
 	    	for (Iterator<Mandolin> i = matchingMandolins.iterator(); i.hasNext();) {
 	    		Mandolin mandolin = (Mandolin)i.next();
-	    		InstrumentSpec spec =  mandolin.getSpec();
+	    		MandolinSpec spec =  (MandolinSpec) mandolin.getSpec();
 	    		System.out.println(" We have a " +
 	    				spec.getBuilder() + " " + spec.getModel() + " " +
 	    				spec.getType() + " mandolin:\n   " +
